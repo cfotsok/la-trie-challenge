@@ -1,0 +1,104 @@
+{
+    "à": {
+        "is_word": true
+    },
+    "a": {
+        "is_word": false,
+        "r": {
+            "is_word": false,
+            "b": {
+                "is_word": false,
+                "r": {
+                    "is_word": false,
+                    "e": {
+                        "is_word": true
+                    }
+                }
+            },
+            "t": {
+                "is_word": false,
+                "i": {
+                    "is_word": false,
+                    "s": {
+                        "is_word": false,
+                        "t": {
+                            "is_word": false,
+                            "e": {
+                                "is_word": true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "c": {
+        "is_word": false,
+        "h": {
+            "is_word": false,
+            "a": {
+                "is_word": false,
+                "p": {
+                    "is_word": false,
+                    "e": {
+                        "is_word": true,
+                        "a": {
+                            "is_word": false,
+                            "u": {
+                                "is_word": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "r": {
+            "is_word": false,
+            "é": {
+                "is_word": false,
+                "a": {
+                    "is_word": false,
+                    "t": {
+                        "is_word": false,
+                        "i": {
+                            "is_word": false,
+                            "f": {
+                                "is_word": true
+                            },
+                            "o": {
+                                "is_word": false,
+                                "n": {
+                                    "is_word": true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "œ": {
+        "is_word": false,
+        "u": {
+            "is_word": false,
+            "f": {
+                "is_word": true
+            }
+        }
+    },
+    "z": {
+        "is_word": false,
+        "è": {
+            "is_word": false,
+            "b": {
+                "is_word": false,
+                "r": {
+                    "is_word": false,
+                    "e": {
+                        "is_word": true
+                    }
+                }
+            }
+        }
+    }
+}

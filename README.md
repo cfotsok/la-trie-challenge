@@ -10,7 +10,7 @@
 
 ## Mots à ajouter :
 
-```words = ["à", "arbre", "artiste", "chape", "chapeau", "créatif", "œuf", "zèbre"]```
+```words = ["à", "arbre", "artiste", "chape", "chapeau", "créatif", "création", "œuf", "zèbre"]```
 
 ## Résultat
 ```
@@ -56,3 +56,9 @@
          |__r
             |__e *[zèbre]
 ```
+
+# Évolution:
+
+## 1/ Fonction ``add`` implémentée.
+
+Résultat de ma proposition pour l'instant dans le fichire ```trie.json```
