@@ -59,6 +59,10 @@
 
 # Évolution:
 
-## 1/ Fonction ``add`` implémentée.
+### 1/ Fonction ``add()`` implémentée.
 
 Résultat de ma proposition pour l'instant dans le fichire ```trie.json```
+
+
+### 2/ Fonction ``contains()`` implémentée.
+

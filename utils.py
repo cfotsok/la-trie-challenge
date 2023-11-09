@@ -5,6 +5,7 @@ from dataclasses import dataclass
 @dataclass
 class Trie:
     content: dict = None
+    word: str = ""
 
     def add(self, word: str):
         # Initialisation du dict pour le premier élément
@@ -13,7 +14,6 @@ class Trie:
 
         # Formattage
         word = word.lower().strip()
-        letters = list(word)
         node = self.content
 
         """Pour chaque lettre du mot à la position n: 
@@ -25,7 +25,7 @@ class Trie:
                  Oui: on signale que c'est la fin du mot.
         On récupère le nœuds suivant de la trie
         """
-        for letter in letters:
+        for letter in word:
             if letter not in node.keys():
                 node[letter] = {"is_word": word.endswith(letter)}
             elif word.endswith(letter):
@@ -36,4 +36,16 @@ class Trie:
             json.dump(self.content, f, indent=4, ensure_ascii=False)
 
     def contains(self, word):
-        pass
+        if not self.content:
+            return False
+
+        word = word.lower().strip()
+        node = self.content
+
+        for letter in word:
+            if letter in node.keys():
+                node = node.get(letter)
+                if word.endswith(word[-1]) and node.get("is_word"):
+                    return True
+        else:
+            return False
