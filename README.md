@@ -57,12 +57,3 @@
             |__e *[zèbre]
 ```
 
-# Évolution:
-
-### 1/ Fonction ``add()`` implémentée.
-
-Résultat de ma proposition pour l'instant dans le fichire ```trie.json```
-
-
-### 2/ Fonction ``contains()`` implémentée.
-

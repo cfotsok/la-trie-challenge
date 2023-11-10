@@ -9,3 +9,5 @@ for w in words:
 
 print(trie.contains("créa"))
 print(trie.contains("création"))
+
+# trie.affiche()
