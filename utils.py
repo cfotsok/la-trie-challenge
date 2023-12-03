@@ -2,61 +2,28 @@ from dataclasses import dataclass
 
 
 class Node:
-    def __init__(self, value):
+    def __init__(self, value="", is_end:bool=False):
         self.value: str = value
         self.children: dict[str, Node] = {}
-        self.parent: (str, Node) = ()
-        self.is_word: bool = False
-        self.visited: list = []
+        self.is_end: bool = is_end
 
 
 @dataclass
 class Trie(object):
-    root: Node = Node("")
-    word = ""
-    i = 0
-    indent = 0
-
-    def add(self, word: str):
-        node = self.root
-        word = word.lower().strip()
-        for letter in word:
-            if letter in node.children:
-                node = node.children[letter]
-            else:
-                new_node = Node(letter)
-                node.children[letter] = new_node
-                new_node.parent = (node.value, node)
-                node = new_node
-        node.is_word = True
-
-    def contains(self, word):
-        node = self.root
-        word = word.lower().strip()
-        for letter in word:
-            if letter in node.children:
-                node = node.children[letter]
-            else:
-                return False
-        return node.is_word
-
-    def affiche(self, node=root, prefix=""):
-        if node.is_word:
-            self.word = prefix
-            print(f"⏐")
-            self.word = ""
-
-        for child in node.children.values():
-            if self.i > 0:
-                print(f"⏐", end="")
-
-            print("   " * self.i + f"⏐⎯ {child.value} ", end="")
-            end = f"*[{prefix + child.value}]" if child.is_word else ""
-            print(end)
-
-            self.i += 1
-            self.affiche(child, prefix + child.value)
-
-            self.i -= 1
-
-
+    root: Node = Node()
+    
+    def add(self, word: str) -> None:
+        def radd(node=self.root, word:str=word):
+            if not word: return None
+            node.children[word[0]] = Node(value=word[0].lower(), is_end=len(word) == 1)
+            # Juste pour check ce qui se passe
+            # print(node.value, node.children[word[0]].value, node.is_end, node.children[word[0]].is_end)
+            radd(node.children[word[0]], word[1:])
+        radd()
+        
+    def contains(self, word:str) -> bool:
+        def rcontains(node=self.root, word:str=word):
+            if not word: return False
+            if node.children[word[0]].is_end and len(word) == 1: return True 
+            return rcontains(node=node.children[word[0]], word=word[1:])
+        return rcontains()
